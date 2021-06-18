@@ -1,0 +1,8 @@
+{
+    "prefix": "!",
+    "username": "your-bot-username",
+    "token": "your-tmi-token",
+    "channels": [
+      "your-channel-name"
+    ]
+}
