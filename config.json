@@ -1,12 +1,10 @@
 {
     "prefix": "!",
-    "username": "your-bot-username",
-    "token": "your-tmi-token",
+    "username": "abyeon",
+    "token": "oauth:l9e6mxuh4w2mb9p0d2bpniibhh3ckg",
     "channels": [
-      "your-channel-name"
+        "abyeon",
+        "mysticxlul",
+        "LudicrouslyLuc"
     ]
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> d9a08fa2911356d17e6a5ce3a2d26a83759a06ad
