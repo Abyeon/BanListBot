@@ -1,6 +1,6 @@
 {
     "prefix": "!",
-    "username": "test",
+    "username": "your-username",
     "token": "your-tmi-token",
     "channels": [
       "your-channel-name"
