@@ -28,7 +28,4 @@ $ node .
 # Usage
 
 ## Commands
-* `!communityban` bans a user from all monitored channels
-* `!communityunban` unbans a user from all monitored channels
-* `!ban` bans a user in the current channel
-* `!unban` unbans a user the current channel
+* `!banlist [add|remove] <username>` edits the banlist.
