@@ -2,7 +2,7 @@
 
 *This is a work in progress*
 
-A simple Twitch chat bot for banning a user from multiple communities. Written in Javascript using [TMI.js](https://github.com/tmijs/tmi.js)
+A simple Twitch chat bot for banning a user from multiple communities. Written in Javascript using <a href="https://nodejs.org/en/" target ="_blank">Node.js</a> and <a href="https://github.com/tmijs/tmi.js" target="_blank">TMI.js</a>
 
 # Setup
 ## Clone the repository and install dependencies

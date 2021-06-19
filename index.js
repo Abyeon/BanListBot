@@ -19,6 +19,8 @@ const client = new tmi.Client({
 
 client.connect();
 
+
+// TODO: Import events smoothly like with commands. Not totally sure how to do this yet.
 /* Import Events */
 const onAnongiftpaidupgradeEvent = require('./events/onAnongiftpaidupgradeEvent.js');
 const onBanEvent = require('./events/onBanEvent.js');
@@ -32,3 +34,10 @@ client.on('ban', async (channel, username, reason, tags) => { await onBanEvent(c
 client.on('cheer', async (channel, tags, message) => { await onCheerEvent(channel, tags, message) });
 client.on('giftpaidupgrade', async (channel, username, sender, tags) => { await onGiftpaidupgradeEvent(channel, username, sender, tags) });
 client.on('message', async (channel, tags, message, self) => { await onMessageEvent(client, channel, tags, message, self) });
+
+/* Initialize Database */
+if (!fs.existsSync('./database.json')) {
+    fs.writeFileSync('./database.json', JSON.stringify({"bannedUsers":[]}), (err) => {
+        console.log(err);
+    });
+}
