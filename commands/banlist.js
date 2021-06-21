@@ -21,8 +21,8 @@ module.exports = {
                     return;
                 }
                 
-                client.ban(channel, user).catch(err => {
-                    logger(`${user} : ${err}`, "ERROR");
+                client.ban(channel, args[1]).catch(err => {
+                    logger(`${args[1]} : ${err}`, "ERROR");
                 });
     
                 client.say(channel, `@${tags.username}, ${args[1]} has been successfully community banned.`);
@@ -40,14 +40,14 @@ module.exports = {
                     return;
                 }
 
-                client.unban(channel, user).catch(err => {
-                    logger(`${user} : ${err}`, "ERROR");
+                client.unban(channel, args[1]).catch(err => {
+                    logger(`${args[1]} : ${err}`, "ERROR");
                 });
     
                 client.say(channel, `@${tags.username}, ${args[1]} has been successfully removed from the banlist.`);
                 break;
             case "sync": // Sync bans / unbans from the ban list
-                const db = require('../database.json');
+                const db = require('../banlist.json');
 
                 db.bannedUsers.forEach(user => {
                     client.ban(channel, user).catch(err => {
