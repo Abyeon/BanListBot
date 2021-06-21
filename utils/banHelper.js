@@ -26,7 +26,7 @@ fs.writeFileIfNotExist = function(fname, contents, options, callback) {
 
 module.exports = {
     banUser(username) {
-        const db = require('../database.json');
+        const db = require('../banlist.json');
 
         let index = db.bannedUsers.indexOf(username.toLowerCase());
         let unbanIndex = db.unbannedUsers.indexOf(username.toLowerCase());
@@ -41,14 +41,14 @@ module.exports = {
             db.unbannedUsers.splice(unbanIndex, 1);
         }
 
-        fs.writeFileSync('database.json', JSON.stringify(db), (err) => {
+        fs.writeFileSync('banlist.json', JSON.stringify(db), (err) => {
             if (err) throw err;
         });
 
         // Ban user from all channels
     },
     unbanUser(username) {
-        const db = require('../database.json');
+        const db = require('../banlist.json');
 
         let index = db.bannedUsers.indexOf(username.toLowerCase());
         let unbanIndex = db.unbannedUsers.indexOf(username.toLowerCase());
@@ -63,7 +63,7 @@ module.exports = {
             db.unbannedUsers.push(username.toLowerCase());
         }
 
-        fs.writeFileSync('database.json', JSON.stringify(db), (err) => {
+        fs.writeFileSync('banlist.json', JSON.stringify(db), (err) => {
             if (err) throw err;
         });
 

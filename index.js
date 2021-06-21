@@ -28,8 +28,8 @@ const onMessageEvent = require('./events/onMessageEvent.js');
 client.on('message', async (channel, tags, message, self) => { await onMessageEvent(client, channel, tags, message, self) });
 
 /* Initialize Database */
-if (!fs.existsSync('./database.json')) {
-    fs.writeFileSync('./database.json', JSON.stringify({"bannedUsers":[],"unbannedUsers":[]}), (err) => {
+if (!fs.existsSync('./banlist.json')) {
+    fs.writeFileSync('./banlist.json', JSON.stringify({"bannedUsers":[],"unbannedUsers":[]}), (err) => {
         console.log(err);
     });
 }
