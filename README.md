@@ -12,7 +12,7 @@ $ git clone https://github.com/Abyeon/BanListBot.git
 $ npm install
 ```
 
-## Configure your bot
+## Configure
 
 * Create a `config.json` file
 * Copy the JSON from the `config.json.defaults` file to your new `config.json` file.
@@ -20,7 +20,7 @@ $ npm install
 * Replace `your-tmi-token` with your token for your bot. You may get this from <a href="https://twitchapps.com/tmi/" target="_blank">TMI.js</a>
 * Add all channels you want your bot to monitor and manage in the `channels` array.
 
-## Run the bot
+## Run
 
 ```bash
 $ node .
