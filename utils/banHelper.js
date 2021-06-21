@@ -29,11 +29,16 @@ module.exports = {
         const db = require('../database.json');
 
         let index = db.bannedUsers.indexOf(username.toLowerCase());
+        let unbanIndex = db.unbannedUsers.indexOf(username.toLowerCase());
 
         if (index == -1) {
             db.bannedUsers.push(username.toLowerCase());
         } else {
             throw new Error(`${username} is already community banned.`);
+        }
+
+        if (unbanIndex > -1) {
+            db.unbannedUsers.splice(unbanIndex, 1);
         }
 
         fs.writeFileSync('database.json', JSON.stringify(db), (err) => {
@@ -46,11 +51,16 @@ module.exports = {
         const db = require('../database.json');
 
         let index = db.bannedUsers.indexOf(username.toLowerCase());
+        let unbanIndex = db.unbannedUsers.indexOf(username.toLowerCase());
 
         if (index > -1) {
             db.bannedUsers.splice(index, 1);
         } else {
             throw new Error(`${username} is not community banned.`);
+        }
+
+        if (unbanIndex == -1) {
+            db.unbannedUsers.push(username.toLowerCase());
         }
 
         fs.writeFileSync('database.json', JSON.stringify(db), (err) => {
